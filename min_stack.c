@@ -1,4 +1,3 @@
-
 /**
  * Program to implement Min Stack.
  * Compilation : gcc Min_stack.c
@@ -49,3 +48,55 @@ void minStackPush(MinStack* obj, int val)
     {
         //checking for minimum value
         if(val >= minStackGetMin(obj))
+        {
+            
+             obj[idx].min_value =  minStackGetMin(obj);
+            
+        }
+        else
+        {
+             obj[idx].min_value = val;
+            
+        }
+    }
+    
+    obj[idx].value = val;
+    size++;
+    idx++;
+}
+
+
+void minStackPop(MinStack* obj) 
+{
+    size--;
+    idx--;
+}
+
+
+int minStackTop(MinStack* obj) 
+{
+
+        //return top of stack    
+        return obj[idx-1].value; 
+    
+}
+
+
+
+int minStackGetMin(MinStack* obj) 
+{
+
+        //returning minimum value
+        return obj[idx - 1].min_value;
+    
+   
+}
+
+
+
+void minStackFree(MinStack* obj) 
+{
+    //clearing memory
+    free(obj);
+}
+
