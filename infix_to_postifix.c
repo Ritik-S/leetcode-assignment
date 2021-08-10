@@ -110,7 +110,8 @@ void infixToPostfix(char *s) {
 	    while(peek() != '(')
 	    {
 		char top_element=peek();
-		answer[fsz++]=top_element;
+		answer[fsz]=top_element;
+		fsz++;    
 		pop();
 	    }
             //popping opening bracket
@@ -120,9 +121,12 @@ void infixToPostfix(char *s) {
 		//if operator comes
 	else 
 	{
-	    while(!is_empty() && priority(s[i]) <= priority(peek())) 
+            int prior1 = priority(s[i]) ;
+	    int prior2 = priority(peek());	
+	    while(!is_empty() && prior1 <= prior2) 
     	    {
-	        answer[fsz++]=peek();
+	        answer[fsz]=peek();
+		fsz++;
 		pop();
 	    }
 	    push(ch);
