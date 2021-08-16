@@ -1,5 +1,5 @@
 /**
- * Program that converts an arithmetic expression from infix notation to postfix notation.
+ * Program to check if it is balanced bracket sequence or not.
  * Compilation : gcc Infix_to_postfix.c
  * Execution : ./a.out
  *
