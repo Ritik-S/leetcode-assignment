@@ -14,7 +14,7 @@ int total_size=3;//total memory allocated to stack ,it increases when buffer is 
 int call=0;//just a record of how many times push is called used to allocate memory to stack
 char *stack;//our dynamic stack
 int size=0;//current size of stack
-int maxN = 1e5; 
+int maxN = 1e5;
 
 
  void allocate_memory_to_stack()
@@ -59,7 +59,7 @@ char pop()
     return -1;
 	size--;
     char top_value= stack[size];//top value of stack
-	//printf("%c\n",top_value); 
+	//printf("%c\n",top_value);
     return top_value;
 }
 
@@ -92,17 +92,17 @@ for(int i = 0; i< len ;++i)
 {
     //opening combination are added to stack
     if(s[i] == '(' || s[i] == '{' || s[i] == '[')	{
-	
+
 		push(s[i]);
 
 	}
-    
-    //for ) stack top should be ) else it is not balanced    
-    if(s[i] == ')')  
+
+    //for ) stack top should be ) else it is not balanced
+    if(s[i] == ')')
     {
-       if(peek() == '(')	
-       {	
-           pop();	
+       if(peek() == '(')
+       {
+           pop();
 	   continue;
        }
        else
@@ -114,7 +114,7 @@ for(int i = 0; i< len ;++i)
     //for } stack top should be { else it is not balanced
     if(s[i] == '}')
     {
-	 
+
        if(peek() == '{')
        {
            pop();
@@ -145,7 +145,9 @@ for(int i = 0; i< len ;++i)
 
 }
     //if everything is fine print it is balanced
+    if(is_empty())
     printf("true\n");
+    else
+    printf("false\n");
 
 }
-
